@@ -88,7 +88,6 @@ else()
 endif()
 
 
-add_dependencies(glog gflags::gflags)
 
 if(SAPI_DOWNLOAD_PROTOBUF)
   include(cmake/protobuf.cmake)
