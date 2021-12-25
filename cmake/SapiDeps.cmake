@@ -52,8 +52,9 @@ endif()
 
 if(SAPI_DOWNLOAD_ABSL)
   include(cmake/abseil-cpp.cmake)
+else()
+  find_package(abseil REQUIRED)
 endif()
-check_target(absl::core_headers)
 
 if(SAPI_DOWNLOAD_LIBCAP)
   include(cmake/libcap.cmake)
@@ -76,13 +77,16 @@ check_target(unwind_ptrace_wrapped)
 
 if(SAPI_DOWNLOAD_GFLAGS)
   include(cmake/gflags.cmake)
+else()
+  find_package(gflags REQUIRED)
 endif()
-check_target(gflags)
 
 if(SAPI_DOWNLOAD_GLOG)
   include(cmake/glog.cmake)
+else()
+  find_package(glog REQUIRED)
 endif()
-check_target(glog::glog)
+
 
 add_dependencies(glog gflags::gflags)
 
